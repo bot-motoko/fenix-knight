@@ -9,6 +9,7 @@ class Clawler
     until completed do
       page = @agent.get(url) unless page
       lists = page.root.css("li.bordertop div.bottomspaced")
+      # find_or_create lookbook
       lists.each do |list|
         idendifier = list.css("img")[0]["alt"]
         provider = 'lookbook'
@@ -17,6 +18,7 @@ class Clawler
         image_link = list_image_link.sub(%r!/files/looks/list/!) { "/files/looks/{{scale}}/" }
         hash = { idendifier: idendifier, provider: provider, permalink: permalink, image_link: image_link }
         puts hash
+        #valid? or end
         if false
           completed = true
           break
