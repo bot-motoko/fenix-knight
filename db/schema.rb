@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130610124015) do
+ActiveRecord::Schema.define(version: 20130610124750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entries", force: true do |t|
+    t.string   "identifier"
+    t.integer  "provider_id"
+    t.string   "permalink"
+    t.string   "imagelink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entries", ["identifier", "provider_id"], name: "identifier_index", unique: true, using: :btree
+  add_index "entries", ["provider_id"], name: "index_entries_on_provider_id", using: :btree
 
   create_table "providers", force: true do |t|
     t.string   "name"
