@@ -10,11 +10,12 @@ class Clawler
       page = @agent.get(url) unless page
       lists = page.root.css("li.bordertop div.bottomspaced")
       lists.each do |list|
-        lookbook_idendifier = list.css("img")[0]["alt"]
+        idendifier = list.css("img")[0]["alt"]
+        provider = 'lookbook'
         permalink = list.css("a")[0]["href"]
         list_image_link = list.css("img")[0]["src"]
         image_link = list_image_link.sub(%r!/files/looks/list/!) { "/files/looks/{{scale}}/" }
-        hash = { lookbook_idendifier: lookbook_idendifier, permalink: permalink, image_link: image_link }
+        hash = { idendifier: idendifier, provider: provider, permalink: permalink, image_link: image_link }
         puts hash
         if false
           completed = true
