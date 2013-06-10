@@ -36,7 +36,7 @@ end
 namespace :crawl do
   desc 'run crawler'
   task girls: :environment do
-    initial_url = "http://lookbook.nu/search?gender=girls&q=glasses&r=1"
+    initial_url = "http://lookbook.nu/search?gender=girls&q=glasses&r=1&sort=newest"
     Clawler.new.run!(initial_url)
   end
 end
