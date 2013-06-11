@@ -140,8 +140,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    swiper-rails (0.1.0)
-      rails (>= 3.1)
     thor (0.18.1)
     thread_safe (0.1.0)
       atomic
@@ -178,6 +176,5 @@ DEPENDENCIES
   rails!
   sass-rails (~> 4.0.0.rc1)
   sdoc
-  swiper-rails
   turbolinks
   uglifier (>= 1.3.0)
