@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get "entry/index"
-  root "entry#index"
+  get "entries/index"
+  root "entries#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
