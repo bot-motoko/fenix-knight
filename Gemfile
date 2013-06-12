@@ -30,11 +30,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'nokogiri'
 gem 'mechanize'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
