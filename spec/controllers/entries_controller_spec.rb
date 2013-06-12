@@ -23,7 +23,7 @@ describe EntriesController do
   # This should return the minimal set of attributes required to create a valid
   # Entry. As you add validations to Entry, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "edit" => "MyString" } }
+  let(:valid_attributes) { { "tag_list" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -46,55 +46,11 @@ describe EntriesController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new entry as @entry" do
-      get :new, {}, valid_session
-      assigns(:entry).should be_a_new(Entry)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested entry as @entry" do
       entry = Entry.create! valid_attributes
       get :edit, {:id => entry.to_param}, valid_session
       assigns(:entry).should eq(entry)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Entry" do
-        expect {
-          post :create, {:entry => valid_attributes}, valid_session
-        }.to change(Entry, :count).by(1)
-      end
-
-      it "assigns a newly created entry as @entry" do
-        post :create, {:entry => valid_attributes}, valid_session
-        assigns(:entry).should be_a(Entry)
-        assigns(:entry).should be_persisted
-      end
-
-      it "redirects to the created entry" do
-        post :create, {:entry => valid_attributes}, valid_session
-        response.should redirect_to(Entry.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved entry as @entry" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "edit" => "invalid value" }}, valid_session
-        assigns(:entry).should be_a_new(Entry)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "edit" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
     end
   end
 
@@ -106,8 +62,8 @@ describe EntriesController do
         # specifies that the Entry created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Entry.any_instance.should_receive(:update).with({ "edit" => "MyString" })
-        put :update, {:id => entry.to_param, :entry => { "edit" => "MyString" }}, valid_session
+        Entry.any_instance.should_receive(:update).with({ "tag_list" => "MyString" })
+        put :update, {:id => entry.to_param, :entry => { "tag_list" => "MyString" }}, valid_session
       end
 
       it "assigns the requested entry as @entry" do
@@ -128,7 +84,7 @@ describe EntriesController do
         entry = Entry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        put :update, {:id => entry.to_param, :entry => { "edit" => "invalid value" }}, valid_session
+        put :update, {:id => entry.to_param, :entry => { "tag_list" => "invalid value" }}, valid_session
         assigns(:entry).should eq(entry)
       end
 
@@ -136,24 +92,9 @@ describe EntriesController do
         entry = Entry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Entry.any_instance.stub(:save).and_return(false)
-        put :update, {:id => entry.to_param, :entry => { "edit" => "invalid value" }}, valid_session
+        put :update, {:id => entry.to_param, :entry => { "tag_list" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested entry" do
-      entry = Entry.create! valid_attributes
-      expect {
-        delete :destroy, {:id => entry.to_param}, valid_session
-      }.to change(Entry, :count).by(-1)
-    end
-
-    it "redirects to the entries list" do
-      entry = Entry.create! valid_attributes
-      delete :destroy, {:id => entry.to_param}, valid_session
-      response.should redirect_to(entries_url)
     end
   end
 
