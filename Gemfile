@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'nokogiri'
 gem 'mechanize'
+gem 'coveralls', require: false
 
 group :development do
   gem 'pry-rails'
