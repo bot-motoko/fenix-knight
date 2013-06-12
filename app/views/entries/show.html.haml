@@ -1,1 +1,11 @@
-= link_to image_tag(@entry.imagelink.sub(%r!{{scale}}!) { "large" }), @entry.permalink, rel: 'nofollow'
+%p#notice= notice
+
+%p
+  = link_to image_tag(@entry.imagelink.sub(%r!{{scale}}!) { "large" }), @entry.permalink, rel: 'nofollow'
+%p
+  %b tags
+  = @entry.tag_list
+
+= link_to 'Edit', edit_entry_path(@entry)
+\|
+= link_to 'Back', entries_path
