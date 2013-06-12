@@ -1,0 +1,2 @@
+- @entries.each do |entry|
+  = link_to image_tag(entry.imagelink.sub(%r!{{scale}}!) { "large" }), entry.permalink
