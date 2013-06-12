@@ -42,7 +42,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activerecord-deprecated_finders (1.0.2)
+    activerecord-deprecated_finders (1.0.3)
     arel (4.0.0)
     atomic (1.1.9)
     better_errors (0.9.0)
