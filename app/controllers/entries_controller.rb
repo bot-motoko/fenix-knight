@@ -4,7 +4,14 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
+    @entries = Entry.all
+  end
+
+  # GET /populars
+  # GET /populars.json
+  def popular
     @entries = Entry.limit(100)
+    render :index
   end
 
   # GET /entries/1
