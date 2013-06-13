@@ -1,6 +1,10 @@
 %p#notice= notice
 
 %p
+  %b tags
+  = tag_path(@bunch.tag_list)
+
+%p
   %b Landing:
   = @bunch.landing
 

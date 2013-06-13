@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th Tags
     %th Landing
     %th
     %th
@@ -9,6 +10,7 @@
 
   - @bunches.each do |bunch|
     %tr
+      %td= bunch.tag_list
       %td= bunch.landing
       %td= link_to 'Show', bunch
       %td= link_to 'Edit', edit_bunch_path(bunch)
