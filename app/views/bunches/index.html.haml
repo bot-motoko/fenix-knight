@@ -1,0 +1,21 @@
+%h1 Listing bunches
+
+%table
+  %tr
+    %th Tags
+    %th Landing
+    %th
+    %th
+    %th
+
+  - @bunches.each do |bunch|
+    %tr
+      %td= bunch.tag_list
+      %td= bunch.landing
+      %td= link_to 'Show', bunch
+      %td= link_to 'Edit', edit_bunch_path(bunch)
+      %td= link_to 'Destroy', bunch, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Bunch', new_bunch_path

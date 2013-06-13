@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b tags
+  = tag_path(@bunch.tag_list)
+
+%p
+  %b Landing:
+  = @bunch.landing
+
+= link_to 'Edit', edit_bunch_path(@bunch)
+\|
+= link_to 'Back', bunches_path

@@ -6,6 +6,8 @@ class EntriesController < ApplicationController
   def index
     if params[:tag]
       @entries = Entry.tagged_with(params[:tag])
+      @bunch = Bunch.tagged_with(params[:tag]).first
+      @neighbor_tag_list = Entry.tagged_with(params[:tag], any: true).first.tag_list.join(',')
     else
       @entries = Entry.all
     end

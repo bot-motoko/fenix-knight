@@ -1,0 +1,15 @@
+= form_for @bunch do |f|
+  - if @bunch.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@bunch.errors.count, "error")} prohibited this bunch from being saved:"
+      %ul
+        - @bunch.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :tag_list
+    = f.text_field :tag_list
+    = f.label :landing
+    = f.text_area :landing
+  .actions
+    = f.submit 'Save'
