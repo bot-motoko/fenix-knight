@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bunches
+
   root 'entries#popular'
   resources :entries, only: [:index, :show, :edit, :update]
   get 'populars' => 'entries#popular', as: :populars

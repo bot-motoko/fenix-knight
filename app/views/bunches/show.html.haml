@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Landing:
+  = @bunch.landing
+
+= link_to 'Edit', edit_bunch_path(@bunch)
+\|
+= link_to 'Back', bunches_path
