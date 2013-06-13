@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'entries#popular'
   resources :entries, only: [:index, :show, :edit, :update]
-  get 'populars' => 'entries#popular'
+  get 'populars' => 'entries#popular', as: :populars
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
