@@ -4,7 +4,7 @@
   = link_to image_tag(@entry.imagelink.sub(%r!{{scale}}!) { "large" }), @entry.permalink, rel: 'nofollow'
 %p
   %b tags
-  = @entry.tag_list
+  = raw @entry.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
 = link_to 'Edit', edit_entry_path(@entry)
 \|
