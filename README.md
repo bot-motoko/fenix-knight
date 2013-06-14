@@ -26,5 +26,5 @@ $ spring rails s
 ## Test
 
 ```
-$ spring rake
+$ spring rake spec
 ```
