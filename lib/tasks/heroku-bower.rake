@@ -1,3 +1,4 @@
+# https://github.com/heroku/heroku-buildpack-ruby/issues/67
 task 'assets:precompile' => ["heroku:node:install[0.8.25]"]
 
 namespace :heroku do
