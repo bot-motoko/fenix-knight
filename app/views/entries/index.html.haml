@@ -1,5 +1,5 @@
 - @entries.each do |entry|
-  = link_to image_tag(entry.imagelink.sub(%r!{{scale}}!) { "large" }), entry.permalink, rel: 'nofollow'
+  = link_to image_tag(entry.imagelink.sub(%r!{{scale}}!) { "large" }), entry_path(entry)
 - if @bunch
   = link_to 'See items on ohmyglasses.', @bunch.landing, target: '_blank'
 - if @neighbor_tag_list
