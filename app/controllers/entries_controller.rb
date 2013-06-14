@@ -6,11 +6,11 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     if params[:tag]
-      @entries = Entry.tagged_with(params[:tag]).page(params[:page])
+      @entries = Entry.tagged_with(params[:tag]).recent.page(params[:page])
       @bunch = Bunch.tagged_with(params[:tag]).first
       @neighbor_tag_list = Entry.tagged_with(params[:tag], any: true).first.tag_list.join(',')
     else
-      @entries = Entry.all.page(params[:page])
+      @entries = Entry.recent.page(params[:page])
     end
   end
 
