@@ -1,7 +1,7 @@
 %h1 Editing entry
 
-= render 'form'
+= render partial: 'form', locals: { entry: @entry }
 
 = link_to 'Show', @entry
 \|
-= link_to 'Back', entries_path
+= link_to 'Back', :back
