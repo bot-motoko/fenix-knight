@@ -23,3 +23,6 @@
 
 # Ignore setting for environment
 /.env
+
+# Ignore bower files
+/vendor/assets/components/*
