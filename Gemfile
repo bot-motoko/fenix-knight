@@ -42,6 +42,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '>= 2.14.0.rc1'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 # Use ActiveModel has_secure_password
