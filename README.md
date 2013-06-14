@@ -31,3 +31,12 @@ $ spring rails s
 ```
 $ spring rake spec
 ```
+
+## Heroku
+
+```
+$ heroku config:set \
+  BUILDPACK_URL='git://github.com/qnyp/heroku-buildpack-ruby-bower.git#run-bower' \
+  USER_TAGGABLE=user \
+  PASSWORD_TAGGABLE=password
+```
