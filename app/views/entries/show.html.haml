@@ -7,6 +7,5 @@
   = raw @entry.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
 - if editable?
-  = link_to 'Edit', edit_entry_path(@entry)
-  \|
+  = render partial: 'form', locals: { entry: @entry }
 = link_to 'Back', :back
