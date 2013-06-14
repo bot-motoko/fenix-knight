@@ -1,0 +1,9 @@
+{
+  "name": "fenix-knight",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
