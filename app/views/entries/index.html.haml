@@ -1,5 +1,10 @@
 - @entries.each do |entry|
   = link_to image_tag(entry.imagelink.sub(%r!{{scale}}!) { "large" }), entry_path(entry)
+  %b tags
+  = raw entry.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+  - if editable?
+    = render partial: 'form', locals: { entry: entry }
+
 - if @bunch
   = link_to 'See items on ohmyglasses.', @bunch.landing, target: '_blank'
 - if @neighbor_tag_list
