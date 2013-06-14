@@ -20,3 +20,6 @@
 
 # Ignore actual database.yml
 /config/database.yml
+
+# Ignore setting for environment
+/.env
