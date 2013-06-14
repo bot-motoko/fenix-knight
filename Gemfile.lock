@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 9fc574fdea359963679e2385e04c23ff007f25e9
+  revision: 90a6059dd2df748e002618eaacab6b46f50d4bfc
   specs:
     actionmailer (4.1.0.beta)
       actionpack (= 4.1.0.beta)
@@ -109,7 +109,7 @@ GEM
     mime-types (1.23)
     mini_portile (0.5.0)
     minitest (5.0.4)
-    multi_json (1.7.6)
+    multi_json (1.7.7)
     net-http-digest_auth (1.3)
     net-http-persistent (2.8)
     nokogiri (1.6.0)
@@ -152,7 +152,7 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.5)
-    spring (0.0.8)
+    spring (0.0.9)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
