@@ -8,7 +8,9 @@
 ## Requirement
 
 - Ruby 2.0
+- Node.js
 - Postgresql
+- ([qnyp/heroku-buildpack-ruby-bower](http://blog.qnyp.com/2013/05/30/say-hello-to-bower/))
 
 ## Setup
 
@@ -16,6 +18,7 @@
 $ git clone git@github.com:mrtaddy/fenix-knight.git
 $ cd fenix-knight
 $ bundle
+$ bower install
 $ cp config/database.yml.example config/database.yml
 $ cp .env.example .env
 $ spring rake db:create db:schema:load
