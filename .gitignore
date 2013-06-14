@@ -17,3 +17,6 @@
 
 # Ignore coveralls
 /coverage
+
+# Ignore actual database.yml
+/config/database.yml

@@ -1,6 +1,11 @@
 language: ruby
 rvm:
   - 2.0.0
+before_script:
+  - cp config/database.yml.example config/database.yml
+notifications:
+  email:
+    - kenichi.murahashi@mrtaddy.com
 branches:
   only:
     - master
