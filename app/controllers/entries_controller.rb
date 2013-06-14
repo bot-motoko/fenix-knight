@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update]
-  before_action :authenticate, except: [:index, :popular, :show]
+  before_action :authenticate, except: [:index, :show]
 
   # GET /entries
   # GET /entries.json
@@ -12,13 +12,6 @@ class EntriesController < ApplicationController
     else
       @entries = Entry.all.page(params[:page])
     end
-  end
-
-  # GET /populars
-  # GET /populars.json
-  def popular
-    @entries = Entry.limit(100)
-    render :index
   end
 
   # GET /entries/1
