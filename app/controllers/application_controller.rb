@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate
   def authenticate
-    authenticate_or_request_with_http_basic('Enter Password') do |u, p|
-      u == ENV['USER_TAGGABLE'] && p == ENV['PASSWORD_TAGGABLE']
+    if Rails.env.production?
+      authenticate_or_request_with_http_basic('Enter Password') do |u, p|
+        u == ENV['USER_TAGGABLE'] && p == ENV['PASSWORD_TAGGABLE']
+      end
     end
   end
 end
