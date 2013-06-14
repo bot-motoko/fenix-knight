@@ -7,10 +7,6 @@ describe EntriesController do
       get("/entries").should route_to("entries#index")
     end
 
-    it "routes to #popular" do
-      get("/populars").should route_to("entries#popular")
-    end
-
     it "routes to #show" do
       get("/entries/1").should route_to("entries#show", :id => "1")
     end

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   resources :bunches
 
-  root 'entries#popular'
+  root 'entries#index'
   resources :entries, only: [:index, :show, :edit, :update]
-  get 'populars' => 'entries#popular', as: :populars
 
   get 'tags/:tag', to: 'entries#index', as: :tag
   # The priority is based upon order of creation: first created -> highest priority.

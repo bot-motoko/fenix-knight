@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'acts-as-taggable-on'
+gem 'kaminari'
 
 gem 'nokogiri'
 gem 'mechanize'
