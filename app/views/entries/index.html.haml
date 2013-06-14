@@ -4,3 +4,4 @@
   = link_to 'See items on ohmyglasses.', @bunch.landing, target: '_blank'
 - if @neighbor_tag_list
   = link_to 'See another pics relatied.', tag_path(@neighbor_tag_list)
+= paginate @entries, outer_window: 3
