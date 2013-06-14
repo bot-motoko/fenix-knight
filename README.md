@@ -14,9 +14,10 @@
 
 ```
 $ git clone git@github.com:mrtaddy/fenix-knight.git
+$ cd fenix-knight
 $ bundle
 $ cp config/database.yml.example config/database.yml
-$ bundle exec rake db:create db:schema:load
+$ spring rake db:create db:schema:load
 $ spring rails s
 #=> rackup!
 ```
